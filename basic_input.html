@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Prediction App</title>
+</head>
+<body>
+    <h1>Stock Prediction App</h1>
+    <form>
+        <label for="stock_name">Stock Name:</label>
+        <input type="text" id="stock_name" name="stock_name" required><br><br>
+        <label for="entry_point">Entry Point:</label>
+        <input type="number" id="entry_point" name="entry_point" required><br><br>
+        <label for="exit_point">Exit Point:</label>
+        <input type="number" id="exit_point" name="exit_point" required><br><br>
+        <button type="button" id="predict_button">Predict</button>
+    </form>
+    <p id="prediction_result"></p>
+    
+    <script>
+        const predictButton = document.getElementById("predict_button");
+        const predictionResult = document.getElementById("prediction_result");
+        
+        predictButton.addEventListener("click", () => {
+            const stockName = document.getElementById("stock_name").value;
+            const entryPoint = parseFloat(document.getElementById("entry_point").value);
+            const exitPoint = parseFloat(document.getElementById("exit_point").value);
+            
+            // Replace this with your prediction logic
+            const prediction = entryPoint * 1.2 + exitPoint * 0.8;
+            
+            predictionResult.textContent = `Predicted stock performance: ${prediction.toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>
